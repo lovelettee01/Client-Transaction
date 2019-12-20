@@ -1,0 +1,38 @@
+# application.yml
+
+#### Tomcat Server Settings ####
+server:
+  port: 8080
+  compression:
+    enabled: true
+    
+
+#### Settings ####
+spring:
+  datasource:
+    url: jdbc:h2:mem:h2_taskDB;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    platform: h2
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: false
+        use_sql_comments: false
+        format_sql: false
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true    
+    
+### slf4j logger Settings ####
+logging:
+  level:
+    com:
+      kakaopay:
+        task: INFO
