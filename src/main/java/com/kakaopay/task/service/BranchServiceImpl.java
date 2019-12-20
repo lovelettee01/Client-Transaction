@@ -29,7 +29,7 @@ public class BranchServiceImpl implements BranchService{
 		List<BranchDto.YearBranchRank> branchDtoList = new ArrayList<>();
 		int dataCnt = 0;
 		for(String y :year.split("\\,", -1)) {
-			if(!"".contentEquals(y)) {
+			if(!"".equals(y)) {
 				List<BranchDto.YearBranchRank.DataList> dataList = branchRepository.findYearBranchRank(y);
 				dataCnt += dataList.size();
 				branchDtoList.add(
