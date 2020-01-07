@@ -29,6 +29,6 @@ public class CommonResult {
 	 * @return
 	 */
 	public static CommonResult error(String message) {
-		return new CommonResult("success", message);
+		return new CommonResult("error", message);
 	}
 }
